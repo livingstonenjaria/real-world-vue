@@ -71,6 +71,24 @@
           "name": "Mary Gordon"
         }
       ]
+    },
+    {
+      "id": 32198,
+      "user": {
+        "id": "abcd123",
+        "name": "Adam Abraham"
+      },
+      "category": "sustainability",
+      "organizer": {
+        "id": "abcd123",
+        "name": "Adam Abraham"
+      },
+      "title": "Plant trees",
+      "description": "plant some trees",
+      "location": "Nairobi",
+      "date": "2022-01-04T21:40:00.000Z",
+      "time": "10:00",
+      "attendees": []
     }
   ]
 }
