@@ -6,6 +6,9 @@ import store from './store'
 // Globally register all `Base`-prefixed components
 import './components/_globals'
 import 'nprogress/nprogress.css'
+import Vuelidate from 'vuelidate'
+
+Vue.use(Vuelidate)
 
 Vue.config.productionTip = false
 
