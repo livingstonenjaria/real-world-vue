@@ -5,6 +5,7 @@ import store from './store'
 
 // Globally register all `Base`-prefixed components
 import './components/_globals'
+import 'nprogress/nprogress.css'
 
 Vue.config.productionTip = false
 
