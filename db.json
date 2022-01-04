@@ -249,6 +249,24 @@
       "date": "2022-01-06T11:28:00.000Z",
       "time": "10:00",
       "attendees": []
+    },
+    {
+      "id": 7458712,
+      "user": {
+        "id": "abcd123",
+        "name": "Adam"
+      },
+      "category": "sustainability",
+      "organizer": {
+        "id": "abcd123",
+        "name": "Adam"
+      },
+      "title": "new",
+      "description": "",
+      "location": "",
+      "date": "2022-01-05T15:00:00.000Z",
+      "time": "14:00",
+      "attendees": []
     }
   ]
 }
