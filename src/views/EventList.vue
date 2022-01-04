@@ -11,7 +11,7 @@
       </router-link>
       |
     </template>
-    <template v-if="event.eventsTotal > page * 3">
+    <template v-if="event.eventsTotal > page * event.perPage">
       <router-link
         :to="{ name: 'event-list', query: { page: page + 1 } }"
         rel="next"
@@ -23,19 +23,33 @@
 </template>
 <script>
 import EventCard from '@/components/EventCard'
+import store from '@/store'
 import { mapState } from 'vuex'
+function getPageEvents(routeTo, next) {
+  const currentPage = parseInt(routeTo.query.page) || 1
+  store.dispatch('event/fetchEvents', { page: currentPage }).then(() => {
+    routeTo.params.page = currentPage
+    next()
+  })
+}
 export default {
+  props: {
+    page: {
+      type: Number,
+      required: true,
+    },
+  },
   components: {
     EventCard,
   },
-  created() {
-    this.$store.dispatch('event/fetchEvents', { perPage: 3, page: this.page })
+  beforeRouteEnter(routeTo, routeFrom, next) {
+    getPageEvents(routeTo, next)
+  },
+  beforeRouteUpdate(routeTo, routeFrom, next) {
+    getPageEvents(routeTo, next)
   },
   computed: {
     ...mapState(['event', 'user']),
-    page() {
-      return parseInt(this.$route.query.page) || 1
-    },
   },
 }
 </script>

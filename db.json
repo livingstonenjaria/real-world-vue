@@ -231,6 +231,24 @@
       "date": "",
       "time": "5:00",
       "attendees": []
+    },
+    {
+      "id": 880794,
+      "user": {
+        "id": "abcd123",
+        "name": "Adam"
+      },
+      "category": "sustainability",
+      "organizer": {
+        "id": "abcd123",
+        "name": "Adam"
+      },
+      "title": "Recycle Day",
+      "description": "Collecting Alluminium",
+      "location": "Mombasa",
+      "date": "2022-01-06T11:28:00.000Z",
+      "time": "10:00",
+      "attendees": []
     }
   ]
 }

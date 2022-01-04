@@ -4,6 +4,7 @@ export const state = {
   events: [],
   event: {},
   eventsTotal: 0,
+  perPage: 3,
 }
 export const mutations = {
   ADD_EVENT(state, event) {
@@ -39,8 +40,8 @@ export const actions = {
         throw error
       })
   },
-  fetchEvents({ commit, dispatch }, { perPage, page }) {
-    EventService.getEvents(perPage, page)
+  fetchEvents({ commit, dispatch, state }, { page }) {
+    return EventService.getEvents(state.perPage, page)
       .then((response) => {
         commit('SET_EVENTS_TOTAL', parseInt(response.headers['x-total-count']))
         commit('SET_EVENTS', response.data)
